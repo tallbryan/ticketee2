@@ -8,6 +8,7 @@ feature "Editing tickets" do
     click_link ticket.title
     click_link "Edit Ticket"
   end
+  
   scenario "Updating a ticket" do
     fill_in "Title", :with => "Make it really shiny!"
     click_button "Update Ticket"
@@ -17,6 +18,7 @@ feature "Editing tickets" do
     end
     page.should_not have_content ticket.title
   end
+  
   scenario "Updating a ticket with invalid information" do
     fill_in "Title", :with => ""
     click_button "Update Ticket"
