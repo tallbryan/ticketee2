@@ -17,7 +17,7 @@ feature "Creating Tickets" do
   
   scenario "Creating a ticket without valid attributes fails" do
     click_button "Create Ticket"
-    page.should have_content("Ticket has not been created")
+    page.should have_content("Ticket has not been created.")
     page.should have_content("Title can't be blank")
     page.should have_content("Description can't be blank")
   end
