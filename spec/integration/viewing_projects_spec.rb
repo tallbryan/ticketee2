@@ -5,12 +5,13 @@ feature "Viewing projects" do
 	let!(:project) { Factory(:project) }
 
 	before do
-		sign_in_as!(user)
 		define_permission!(user, :view, project) 
+		sign_in_as!(user)
 	end
 
 	scenario "Listing all projects" do
 	    project = Factory.create(:project, :name => "Textmate 2")
+	    define_permission!(user, :view, project) 
 	    visit '/'
 	    click_link project.name
 	    page.current_url.should == project_url(project)

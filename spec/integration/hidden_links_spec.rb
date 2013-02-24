@@ -1,12 +1,12 @@
 require 'spec_helper'
 
 feature "hidden links" do
-  let(:user) { Factory(:confirmed_user) }
+  let(:user) { Factory(:user) }
   let(:admin) { Factory(:admin_user) }
   let(:project) { Factory(:project) }
   
   context "anonymous users" do
-    
+    before {sign_in_as!(user)}
     scenario "cannot see the New Project link" do
       visit '/'
       assert_no_link_for "New Project"
@@ -23,6 +23,7 @@ feature "hidden links" do
     end
   end
   
+  let(:user) { Factory(:confirmed_user) }
   context "regular users" do
     before {sign_in_as!(user) }
     
