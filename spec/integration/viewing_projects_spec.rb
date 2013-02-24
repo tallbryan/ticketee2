@@ -3,6 +3,7 @@ require 'spec_helper'
 feature "Viewing projects" do
 	let!(:user) { Factory(:confirmed_user) }
 	let!(:project) { Factory(:project) }
+	let!(:project_2) { Factory(:project, :name => "Internet Explorer")}
 
 	before do
 		define_permission!(user, :view, project) 
@@ -13,6 +14,7 @@ feature "Viewing projects" do
 	    project = Factory.create(:project, :name => "Textmate 2")
 	    define_permission!(user, :view, project) 
 	    visit '/'
+	    page.should_not have_content("Internet Explorer")
 	    click_link project.name
 	    page.current_url.should == project_url(project)
 	end
