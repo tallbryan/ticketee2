@@ -27,6 +27,8 @@ group :test, :development do
   gem 'rspec-rails', '~>2.11'
   gem 'devise', '2.1.0.rc'
   gem 'cancan', '1.6.7'
+
+  gem 'paperclip', '2.7.0'
   gem 'email_spec', '1.2.1'
   gem 'pry', '0.9.12'
 end
