@@ -5,6 +5,7 @@ Ticketee2::Application.routes.draw do
   
   root :to => "projects#index"
 
+  resources :files
   resources :projects do
     resources :tickets
   end
