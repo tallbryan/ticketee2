@@ -5,6 +5,7 @@ class ProjectsController < ApplicationController
   before_filter :find_project, :only => [:show, :edit, :update, :destroy]
 
   def index 
+    #binding.pry
     @projects = Project.for(current_user).all
   end
   

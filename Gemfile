@@ -31,11 +31,13 @@ group :test, :development do
   gem 'paperclip', '2.7.0'
   gem 'email_spec', '1.2.1'
   gem 'pry', '0.9.12'
+  gem 'selenium-webdriver','>= 2.5.0'
 end
 
 group :test do
   gem 'capybara', '1.1.2'
   gem 'factory_girl', '2.6.4'
+  gem 'database_cleaner', '0.7.2'
 end
 
 # To use ActiveModel has_secure_password
